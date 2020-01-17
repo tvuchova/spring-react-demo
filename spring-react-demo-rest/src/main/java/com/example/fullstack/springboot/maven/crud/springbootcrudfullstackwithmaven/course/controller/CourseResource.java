@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.example.fullstack.springboot.maven.crud.springbootcrudfullstackwithmaven.ResourseNotFoundException;
 import com.example.fullstack.springboot.maven.crud.springbootcrudfullstackwithmaven.course.model.Course;
+import com.example.fullstack.springboot.maven.crud.springbootcrudfullstackwithmaven.course.service.CourseService;
 import com.example.fullstack.springboot.maven.crud.springbootcrudfullstackwithmaven.course.service.CoursesH2Service;
 import com.example.fullstack.springboot.maven.crud.springbootcrudfullstackwithmaven.course.service.CoursesHardcodedService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 public class CourseResource {
 
 	@Autowired
-	private CoursesH2Service courseManagementService;
+	private CourseService courseManagementService;
 
 	@GetMapping("/instructors/{username}/courses")
 	public List<Course> getAllCourses(@PathVariable String username) {

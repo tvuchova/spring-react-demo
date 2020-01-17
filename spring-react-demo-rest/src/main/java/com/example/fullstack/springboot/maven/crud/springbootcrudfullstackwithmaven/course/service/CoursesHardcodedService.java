@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.fullstack.springboot.maven.crud.springbootcrudfullstackwithmaven.course.model.Course;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+@Profile("postgre")
 @Service
-public class CoursesHardcodedService {
+public class CoursesHardcodedService implements CourseService{
 
 	private static List<Course> courses = new ArrayList<>();
 	private static long idCounter = 0;

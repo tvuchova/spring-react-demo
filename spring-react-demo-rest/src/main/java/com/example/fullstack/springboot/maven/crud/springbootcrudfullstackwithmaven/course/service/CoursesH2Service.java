@@ -3,12 +3,14 @@ package com.example.fullstack.springboot.maven.crud.springbootcrudfullstackwithm
 import com.example.fullstack.springboot.maven.crud.springbootcrudfullstackwithmaven.ResourseNotFoundException;
 import com.example.fullstack.springboot.maven.crud.springbootcrudfullstackwithmaven.course.model.Course;
 import com.example.fullstack.springboot.maven.crud.springbootcrudfullstackwithmaven.course.repository.CourseRepository;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Profile("h2")
 @Service
-public class CoursesH2Service
+public class CoursesH2Service implements CourseService
 {
     private final CourseRepository repository;
 
